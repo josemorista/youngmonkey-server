@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index",
+    "start": "node dist/index",
     "dev": "npx ts-node-dev src/index.ts --watch-ignore node_modules"
   },
   "keywords": [],
