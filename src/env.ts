@@ -33,3 +33,5 @@ export const database = String(process.env.database);
 export const port = Number(process.env.port);
 
 export const secret = String(process.env.secret);
+
+export const serverUrl = String(process.env.serverUrl);

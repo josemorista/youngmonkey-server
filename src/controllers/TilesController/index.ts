@@ -1,10 +1,11 @@
 import { Request, Response } from "express";
 import db from "../../database";
+import { serverUrl } from "../../env";
 
 const serializeTiles = (tiles: Array<any>) => {
   const serialized = tiles.map(tile => {
     const serializedData = { ...tile };
-    // serializedData.img = `http://localhost:3333/uploads/${tile.img}`;
+    serializedData.img = `${serverUrl}/uploads/${tile.img}`;
     return serializedData;
   });
   return serialized;
@@ -24,7 +25,8 @@ class TilesController {
 
   async create(req: Request, res: Response) {
     try {
-      res.json(req.body);
+      console.log(req.file);
+      res.json({ img: req.file });
     } catch (error) {
       console.log(error);
       return res.json({ error: 'Ops, some wild error appeared!' });

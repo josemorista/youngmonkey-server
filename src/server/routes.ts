@@ -14,7 +14,7 @@ export default (server: Express) => {
 
   // Tiles Api
   oapi.get('/tiles', tilesController.index);
-  api.post('/tiles', uploader.single('img'), tilesController.create);
+  oapi.post('/tiles/upload', uploader.single('file'), tilesController.create);
 
   // Users APi
   oapi.post('/users/signUp', usersController.create);
