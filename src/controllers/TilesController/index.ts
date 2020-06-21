@@ -5,7 +5,8 @@ import { serverUrl } from "../../env";
 const serializeTiles = (tiles: Array<any>) => {
   const serialized = tiles.map(tile => {
     const serializedData = { ...tile };
-    serializedData.img = `${serverUrl}/uploads/${tile.img}`;
+    //serializedData.img = `${serverUrl}/uploads/${tile.img}`;
+    serializedData.video = `${serverUrl}/uploads/${tile.video}`;
     return serializedData;
   });
   return serialized;

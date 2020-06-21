@@ -8,7 +8,8 @@ const env_1 = require("../../env");
 const serializeTiles = (tiles) => {
     const serialized = tiles.map(tile => {
         const serializedData = Object.assign({}, tile);
-        serializedData.img = `${env_1.serverUrl}/uploads/${tile.img}`;
+        //serializedData.img = `${serverUrl}/uploads/${tile.img}`;
+        serializedData.video = `${env_1.serverUrl}/uploads/${tile.video}`;
         return serializedData;
     });
     return serialized;
