@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.secret = exports.port = exports.database = void 0;
+exports.serverUrl = exports.secret = exports.port = exports.database = void 0;
 const dotenv_1 = require("dotenv");
 const path_1 = require("path");
 switch (process.env.NODE_ENV) {
@@ -32,3 +32,4 @@ switch (process.env.NODE_ENV) {
 exports.database = String(process.env.database);
 exports.port = Number(process.env.port);
 exports.secret = String(process.env.secret);
+exports.serverUrl = String(process.env.serverUrl);

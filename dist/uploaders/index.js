@@ -11,7 +11,7 @@ exports.default = multer_1.default({
         destination: path_1.default.resolve(__dirname, '..', '..', 'uploads'),
         filename: (req, file, callback) => {
             const hash = uuid_1.v4().replace(new RegExp('-', 'g'), '');
-            const fileName = `${hash}-${file.filename}`;
+            const fileName = `${hash}-${file.originalname}`;
             callback(null, fileName);
         },
     }),

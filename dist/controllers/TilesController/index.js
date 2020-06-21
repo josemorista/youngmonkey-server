@@ -4,10 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../../database"));
+const env_1 = require("../../env");
 const serializeTiles = (tiles) => {
     const serialized = tiles.map(tile => {
         const serializedData = Object.assign({}, tile);
-        // serializedData.img = `http://localhost:3333/uploads/${tile.img}`;
+        serializedData.img = `${env_1.serverUrl}/uploads/${tile.img}`;
         return serializedData;
     });
     return serialized;
@@ -25,7 +26,8 @@ class TilesController {
     }
     async create(req, res) {
         try {
-            res.json(req.body);
+            console.log(req.file);
+            res.json({ img: req.file });
         }
         catch (error) {
             console.log(error);

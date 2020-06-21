@@ -16,7 +16,7 @@ exports.default = (server) => {
     api.use(auth_1.auth);
     // Tiles Api
     oapi.get('/tiles', tilesController.index);
-    api.post('/tiles', uploaders_1.default.single('img'), tilesController.create);
+    oapi.post('/tiles/upload', uploaders_1.default.single('file'), tilesController.create);
     // Users APi
     oapi.post('/users/signUp', usersController.create);
     oapi.post('/users/signIn', usersController.signIn);
