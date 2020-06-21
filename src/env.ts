@@ -21,7 +21,11 @@ switch (process.env.NODE_ENV) {
     });
     break;
   default:
-    throw new Error(`'NODE_ENV' ${process.env.NODE_ENV} is not handled!`);
+    console.log('Production mode lock and loaded!');
+    configDotenv({
+      path: resolve(__dirname, '../.env'),
+    });
+    break;
 }
 
 export const database = String(process.env.database);

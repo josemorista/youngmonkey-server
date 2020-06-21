@@ -2,7 +2,7 @@ import { Schema, Document } from 'mongoose';
 
 const tilesSchema = new Schema({
   cols: {
-    type: Number,
+    type: Schema.Types.Mixed,
     required: true
   },
   img: {
@@ -27,7 +27,13 @@ const tilesSchema = new Schema({
 });
 
 export interface ITiles extends Document {
-  cols: number;
+  cols: {
+    xs: number;
+    sm: number;
+    md: number;
+    lg: number;
+    xl: number;
+  };
   img: string;
   video: string;
   position: number;

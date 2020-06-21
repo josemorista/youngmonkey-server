@@ -1,5 +1,6 @@
 import server from './server';
+import { port } from './env';
 
-server.listen('3333', () => {
-  console.log('Server is on! 3333 is the magic port!');
+server.listen(port || '3333', () => {
+  console.log('Server is on! Good luck!');
 });
